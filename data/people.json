@@ -1,0 +1,250 @@
+[
+  {
+    "id": "user_01",
+    "name": "林晨曦",
+    "bio": "00后全干工程师，产品 × 设计 × iOS 三栖创业者",
+    "skills": ["产品经理", "UI/UX", "iOS开发", "Swift", "Founder"],
+    "location": "浙江·杭州",
+    "shortTermGoal": "把自己做的社交产品推向第一批种子用户，完成冷启动验证",
+    "midTermGoal": "将产品月活做到1万，找到可持续的商业模式",
+    "longTermGoal": "打造一款真正改变年轻人线下社交方式的产品，成为这个细分领域的标杆",
+    "nfcId": "nfc_01",
+    "precomputedCard": {
+      "totalScore": 8.4,
+      "level": "A",
+      "dimensions": {
+        "collaboration": { "score": 8.0, "reason": "TA的产品设计能力补你的技术背景，社交产品方向有合作切面" },
+        "cognitive": { "score": 8.5, "reason": "全干工程师的产品思维和设计审美，能拓宽技术创业者的认知边界" },
+        "strategic": { "isReserve": false, "reason": "产品和设计资源在早期创业阶段高度稀缺" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "社交产品 Founder，有实际项目沉淀" },
+      "tags": ["产品", "iOS", "Founder", "杭州"],
+      "card": {
+        "whyTa": "你缺产品视角和设计审美，TA是产品×设计×技术三栖的00后创业者。TA的社交产品方向也可能和你产生交集。",
+        "collision": "可以让TA从产品视角审视你的MVP，00后对年轻用户的理解是你团队最需要的外部视角。TA的iOS能力也能帮你快速出App原型。",
+        "openingQuestions": [
+          "你的社交产品解决的最核心痛点是什么？",
+          "全干工程师做产品，最让你头疼的是哪个环节？",
+          "00后眼里，现在的社交产品最无聊的地方是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_02",
+    "name": "陈博远",
+    "bio": "港中文 AI 博士，Mindset Tech 可穿戴构建者，十镜科技创始人",
+    "skills": ["AI研究", "可穿戴硬件", "创始人", "语义感知"],
+    "location": "香港 / 北京",
+    "shortTermGoal": "完成 Spiro AI 珠宝的 MVP，找到智能硬件方向的联合创始人 CTO",
+    "midTermGoal": "完成 Pre-A 轮融资，组建核心团队，产品进入量产阶段",
+    "longTermGoal": "用 always-on 语义感知技术帮助人类构建数字超我，让 AI 成为人类认知的澄澈镜子",
+    "nfcId": "nfc_02",
+    "precomputedCard": {
+      "totalScore": 9.3,
+      "level": "S",
+      "dimensions": {
+        "collaboration": { "score": 9.5, "reason": "TA正在找智能硬件 CTO 合伙人，强互补：你有技术TA有学术和硬件资源" },
+        "cognitive": { "score": 9.5, "reason": "AI博士的语义感知前沿研究＋可穿戴硬件的真实落地经验，认知密度极高" },
+        "strategic": { "isReserve": false, "reason": "当前最强合作人选，多维度对齐" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "港中文博士+Founder，有学术和产业双重背书" },
+      "tags": ["AI博士", "可穿戴", "Founder", "找CTO"],
+      "card": {
+        "whyTa": "TA是AI博士+硬件创始人，正在找智能硬件方向的CTO联合创始人。你缺学术深度和硬件供应链，TA缺工程落地力——天作之合。",
+        "collision": "TA的Spiro AI珠宝项目是AI+可穿戴的先锋产品。你可以成为TA的CTO，用你的工程能力把学术论文变成量产产品。本场就可以聊清楚合作框架。",
+        "openingQuestions": [
+          "Spiro AI珠宝最核心的技术壁垒是什么？",
+          "可穿戴硬件从原型到量产，踩过最大的坑是什么？",
+          "你对CTO联合创始人的核心期望是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_03",
+    "name": "苏远航",
+    "bio": "前外企软件团队负责人，现 AI native 创业，CTO @ Little Shock",
+    "skills": ["CTO", "AI硬件", "产品开发", "团队转型", "Agent"],
+    "location": "上海",
+    "shortTermGoal": "推动 Little Shock 完成第一个 AI 硬件产品的技术验证，招募2名核心工程师",
+    "midTermGoal": "产品上线并进入 WayToAGI 生态合作，形成稳定的 Agent 技术方案",
+    "longTermGoal": "带领一支 AI native 团队，在 AGI 时代做出真正有影响力的智能硬件产品",
+    "nfcId": "nfc_03",
+    "precomputedCard": {
+      "totalScore": 9.0,
+      "level": "S",
+      "dimensions": {
+        "collaboration": { "score": 9.0, "reason": "大厂CTO+AI硬件创业，正在招募核心工程师，你完美匹配TA的需求" },
+        "cognitive": { "score": 8.5, "reason": "前外企团队负责人对工程管理和团队转型有深刻认知" },
+        "strategic": { "isReserve": false, "reason": "立即可合作，Agent方向高度匹配" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "前外企团队Lead+现CTO，管理＋技术双验证" },
+      "tags": ["CTO", "AI硬件", "Agent", "上海"],
+      "card": {
+        "whyTa": "TA是正在搭建团队的AI硬件CTO，刚好缺2名核心工程师。你缺硬件落地方向，TA缺你这样的全栈——一拍即合。",
+        "collision": "可以加入Little Shock做核心工程师，或者本场一起做Agent+硬件的demo。TA的WayToAGI生态资源也能帮你对接更多合作。",
+        "openingQuestions": [
+          "Little Shock第一个AI硬件产品长什么样？",
+          "从外企团队Lead转到创业CTO，最难适应的是什么？",
+          "你对核心工程师最看重的3个能力是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_04",
+    "name": "夏语桐",
+    "bio": "04年休学创业者，华南农大 AI 专业，宠物 AI 健康赛道 Founder",
+    "skills": ["AI硬件", "多模态", "AI4PetHealth", "Founder", "有效利他"],
+    "location": "广东·广州",
+    "shortTermGoal": "完成宠物健康 AI 检测硬件的第一版原型，找到种子用户做内测",
+    "midTermGoal": "拿到第一笔天使投资，产品服务1000个宠物家庭",
+    "longTermGoal": "致力于打造更好的人宠生活方式，让每一只被爱的宠物都能得到科学守护",
+    "nfcId": "nfc_04",
+    "precomputedCard": {
+      "totalScore": 8.2,
+      "level": "A",
+      "dimensions": {
+        "collaboration": { "score": 7.8, "reason": "宠物AI健康赛道的垂直切入有特色，技术栈有交集但方向偏向垂直应用" },
+        "cognitive": { "score": 8.5, "reason": "04后视角+AI宠物赛道的独特洞察+休学创业的勇气，认知多样性价值高" },
+        "strategic": { "isReserve": false, "reason": "宠物AI是新赛道，未来有合作可能性" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "休学创业Founder，在推进真实产品" },
+      "tags": ["宠物AI", "多模态", "Founder", "广州"],
+      "card": {
+        "whyTa": "04年休学做宠物AI健康硬件，TA的选择本身就说明了对AI硬件方向的坚定。垂直赛道切入策略值得你参考。",
+        "collision": "宠物健康的多模态AI检测技术和你的AI能力有技术层面的交集。TA的中期目标是融资+1000个家庭用户，你可以分享硬件出海的渠道经验。",
+        "openingQuestions": [
+          "宠物健康AI检测最大的技术难点是什么？",
+          "休学创业最让你后悔和最让你庆幸的事分别是什么？",
+          "宠物AI赛道最大的市场机会在哪里？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_05",
+    "name": "方志恒",
+    "bio": "全球 AI 硬件 BG 总经理，8年连续创业者，今年要赞助100场黑客松",
+    "skills": ["AI硬件", "产品", "营销", "GTM", "投融资"],
+    "location": "上海 / 全球",
+    "shortTermGoal": "招募100位软硬件产品、全栈工程师、品牌营销、海外 GTM 方向的小伙伴",
+    "midTermGoal": "赞助并参与100场创业黑客松，构建覆盖全球的创业者生态网络",
+    "longTermGoal": "成为推动 AI 硬件行业发展的重要力量，通过投资和资源整合帮助更多创业者成功",
+    "nfcId": "nfc_05",
+    "precomputedCard": {
+      "totalScore": 8.8,
+      "level": "A",
+      "dimensions": {
+        "collaboration": { "score": 8.5, "reason": "AI硬件BG总经理在招募团队，你的全栈能力直接匹配TA的人才需求" },
+        "cognitive": { "score": 9.5, "reason": "8年连续创业者+全球AI硬件视角+投融资经验，是全场认知含金量最高的人之一" },
+        "strategic": { "isReserve": false, "reason": "不是储备型，TA可能直接成为你的投资人、合作伙伴或导师" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "AI硬件BG总经理+8年连续创业，产业资源丰富" },
+      "tags": ["AI硬件", "GTM", "投融资", "全球"],
+      "card": {
+        "whyTa": "TA要赞助100场黑客松+招募100人，你很可能就是TA要找的第一个人。AI硬件BG总经理的资源你平常约不到，今天8小时近距离。",
+        "collision": "可以直接聊加入TA的团队，或者聊TA赞助你的项目。TA的全球AI硬件渠道和GTM经验是钱买不到的——这是你今天最不该错过的人。",
+        "openingQuestions": [
+          "你一年赞助100场黑客松，最希望在黑客松上看到什么样的项目？",
+          "连续创业8年，你见过的最可惜的失败案例是什么？",
+          "AI硬件出海，你最看好的3个细分赛道是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_06",
+    "name": "魏思宁",
+    "bio": "跨领域整合型产品人，AIoT + 智能硬件 + 科创教育三线并行",
+    "skills": ["智能硬件产品", "AIoT", "科创教育", "PCB设计", "品牌视觉"],
+    "location": "待定",
+    "shortTermGoal": "在 XbotPark 完成 BFRB 方向智能解压产品的用户调研和产品定义",
+    "midTermGoal": "完成硬件验证板设计，推出第一版可测试的解压智能产品",
+    "longTermGoal": "持续创造，让价值被真实感知，在产品 × 技术 × 教育 × 市场交叉领域建立自己的话语权",
+    "nfcId": "nfc_06",
+    "precomputedCard": {
+      "totalScore": 7.8,
+      "level": "A",
+      "dimensions": {
+        "collaboration": { "score": 7.5, "reason": "PCB设计+品牌视觉是硬件团队的稀缺能力，但方向偏健康解压不同于你的AI硬件" },
+        "cognitive": { "score": 8.0, "reason": "AIoT+智能硬件+科创教育三线并行，跨领域整合思路值得借鉴" },
+        "strategic": { "isReserve": false, "reason": "XbotPark生态资源长期有价值" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "XbotPark孵化+PCB设计能力，有实物产出潜力" },
+      "tags": ["AIoT", "PCB", "科创教育", "XbotPark"],
+      "card": {
+        "whyTa": "PCB设计+品牌视觉+产品定义，TA是硬件初创团队最需要的那种跨领域产品人。你的技术+TA的产品=完整团队。",
+        "collision": "可以交流硬件创业方法论。TA在XbotPark的资源网络（尤其是供应链和制造）可能是你的项目后续最需要的。",
+        "openingQuestions": [
+          "BFRB方向的智能解压产品，技术落地上最大的挑战是什么？",
+          "XbotPark的孵化体系对你最大的帮助是什么？",
+          "跨三个领域并行，你的时间管理方法论是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_07",
+    "name": "叶知微",
+    "bio": "跨媒介艺术创作者，关注身体、时间与规则的关系",
+    "skills": ["视觉设计", "装置艺术", "影像", "游戏设计", "食物艺术"],
+    "location": "浙江·杭州",
+    "shortTermGoal": "完成种种系列新作，参加杭州群展迫降",
+    "midTermGoal": "拓展艺术驻地合作，探索艺术与商业设计的结合路径",
+    "longTermGoal": "通过规则对经验塑形，在劳动与日常的溢出中构建可被感知的时间与场景，形成独特的创作语言",
+    "nfcId": "nfc_07",
+    "precomputedCard": {
+      "totalScore": 6.5,
+      "level": "B",
+      "dimensions": {
+        "collaboration": { "score": 4.0, "reason": "艺术创作方向与AI硬件产品交集有限，暂时无直接合作切面" },
+        "cognitive": { "score": 7.5, "reason": "跨媒介艺术家的审美和感知哲学能给技术人带来独特的认知刷新" },
+        "strategic": { "isReserve": true, "reason": "全场唯一纯艺术家视角。AI硬件产品最终要打动用户，TA能给你的产品赋予灵魂" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "有艺术作品产出，参与群展" },
+      "tags": ["视觉设计", "装置艺术", "影像", "杭州", "战略储备"],
+      "card": {
+        "whyTa": "短期没合作，但TA是全场唯一用艺术视角看世界的人。AI硬件产品最大的问题不是技术，是冷冰冰——TA能帮你想清楚'美感'这件事。",
+        "collision": "请TA从艺术审美角度审视你的产品设计。TA对'身体、时间与规则'的关注可能启发你对用户交互的全新理解。现在存住，以后产品做视觉设计时TA是最佳人选。",
+        "openingQuestions": [
+          "你做装置艺术时，观众最让你意外的反应是什么？",
+          "如果用一句话描述你作品的核心哲学，是什么？",
+          "你觉得科技产品最大的审美灾难是什么？"
+        ]
+      }
+    }
+  },
+  {
+    "id": "user_08",
+    "name": "贺明远",
+    "bio": "Java 后端工程师，Agent 开发爱好者，寻找 AI 时代的下一站",
+    "skills": ["Java", "Python", "Agent开发", "RAG", "后端", "内容运营"],
+    "location": "广东·深圳",
+    "shortTermGoal": "找到一家 AI 初创公司，从事 Agent 开发或 AI 产品运营方向的工作",
+    "midTermGoal": "深入参与一个 AI 产品从0到1的完整过程，积累跨领域经验",
+    "longTermGoal": "在 AI 时代做一名能连接技术与人文的复合型人才，研究 AI 与人文社科的交叉领域",
+    "nfcId": "nfc_08",
+    "precomputedCard": {
+      "totalScore": 7.2,
+      "level": "A",
+      "dimensions": {
+        "collaboration": { "score": 7.5, "reason": "Agent开发+RAG方向高度匹配，正在找AI初创公司，你的项目就是TA在找的机会" },
+        "cognitive": { "score": 7.0, "reason": "Java后端背景＋Agent实践经验，技术底座扎实" },
+        "strategic": { "isReserve": false, "reason": "可立即合作，Agent开发方向是当前项目急需的能力" }
+      },
+      "credibility": { "hasPublicWork": true, "note": "有后端+Agent开发实战经验" },
+      "tags": ["Agent", "RAG", "Python", "深圳"],
+      "card": {
+        "whyTa": "你要做AI硬件，Agent能力是关键拼图。TA专注Agent开发+RAG，正在找AI初创公司——你缺Agent人才，TA缺机会。双向匹配。",
+        "collision": "可以直接聊TA加入你团队做Agent开发工程师。TA的Java后端经验也能帮你搭建稳定的后端服务体系。本场就可以安排技术面聊。",
+        "openingQuestions": [
+          "你做的Agent项目里，最让你觉得'这个方向对了'的瞬间是什么？",
+          "从Java后端转到Agent开发，最大的思维转变是什么？",
+          "你对AI初创公司的核心期望是什么？"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* Glassmorphic utilities — adapted from nextjs-glassmorphic-starter */
+@layer components {
+  .glass-surface {
+    background: color-mix(in oklch, var(--card) 92%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid color-mix(in oklch, var(--border) 85%, transparent);
+    box-shadow: 0 12px 36px color-mix(in oklch, black 18%, transparent);
+  }
+
+  .glass-hover {
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+  .glass-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px color-mix(in oklch, black 22%, transparent);
+    border-color: color-mix(in oklch, white 20%, transparent);
+  }
+
+  .shadow-glass {
+    box-shadow: 0 10px 30px color-mix(in oklch, black 15%, transparent);
+  }
+}
+
+/* Custom animation for pulsating skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--muted) 30%, transparent) 25%,
+    color-mix(in oklch, var(--muted) 50%, transparent) 50%,
+    color-mix(in oklch, var(--muted) 30%, transparent) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Level badge colors */
+.level-S {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+}
+
+.level-A {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  color: #fff;
+}
+
+.level-B {
+  background: linear-gradient(135deg, #64748b, #475569);
+  color: #fff;
+}
