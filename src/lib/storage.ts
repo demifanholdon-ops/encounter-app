@@ -9,9 +9,26 @@ export interface ScannedRecord {
   scannedAt: number
 }
 
+function safeGetItem(key: string): string | null {
+  try {
+    if (typeof window === 'undefined') return null
+    return localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function safeSetItem(key: string, value: string): void {
+  try {
+    if (typeof window === 'undefined') return
+    localStorage.setItem(key, value)
+  } catch {
+    // Safari private mode or storage full — silently fail
+  }
+}
+
 export function getUserContext(): UserContext | null {
-  if (typeof window === 'undefined') return null
-  const raw = localStorage.getItem(USER_KEY)
+  const raw = safeGetItem(USER_KEY)
   if (!raw) return null
   try {
     return JSON.parse(raw)
@@ -21,8 +38,7 @@ export function getUserContext(): UserContext | null {
 }
 
 export function saveUserContext(ctx: UserContext): void {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(USER_KEY, JSON.stringify(ctx))
+  safeSetItem(USER_KEY, JSON.stringify(ctx))
 }
 
 export function hasUserContext(): boolean {
@@ -30,8 +46,7 @@ export function hasUserContext(): boolean {
 }
 
 export function getScannedPeople(): Record<string, ScannedRecord> {
-  if (typeof window === 'undefined') return {}
-  const raw = localStorage.getItem(SCANNED_KEY)
+  const raw = safeGetItem(SCANNED_KEY)
   if (!raw) return {}
   try {
     return JSON.parse(raw)
@@ -41,10 +56,9 @@ export function getScannedPeople(): Record<string, ScannedRecord> {
 }
 
 export function addScannedPerson(id: string, person: PersonData, card: EncounterCard): void {
-  if (typeof window === 'undefined') return
   const all = getScannedPeople()
   all[id] = { person, card, scannedAt: Date.now() }
-  localStorage.setItem(SCANNED_KEY, JSON.stringify(all))
+  safeSetItem(SCANNED_KEY, JSON.stringify(all))
 }
 
 export function isPersonScanned(id: string): boolean {
