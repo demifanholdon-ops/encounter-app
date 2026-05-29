@@ -1,42 +1,62 @@
 'use client'
 
 import { useEffect, useState, use } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ScoreCard } from '@/components/ScoreCard'
-import { getUserContext, addScannedPerson } from '@/lib/storage'
+import { getUserContext, saveUserContext, addScannedPerson } from '@/lib/storage'
 import { getPersonById } from '@/lib/people'
-import type { EncounterCard, PersonData } from '@/lib/schema'
+import type { EncounterCard, UserContext } from '@/lib/schema'
 import { Skeleton } from '@/components/ui/skeleton'
-import { ArrowLeft, AlertCircle } from 'lucide-react'
+import { ArrowLeft, AlertCircle, Info } from 'lucide-react'
+
+const DEFAULT_USER: UserContext = {
+  longTerm: 'AI 硬件出海创业',
+  midTerm: '扩展认知和人脉',
+  shortTerm: '本场找 AI 硬件 / Web3 方向的人合作',
+  background: '全栈工程师，擅长 AI 和前端',
+  activityContext: '武汉 Rebase Web3 黑客松 2026',
+}
 
 export default function EncounterPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
-  const router = useRouter()
 
   const [card, setCard] = useState<EncounterCard | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [isDefaultUser, setIsDefaultUser] = useState(false)
 
   useEffect(() => {
     const user = getUserContext()
-    if (!user) {
-      router.push('/')
-      return
-    }
-
     const target = getPersonById(id)
+
     if (!target) {
       setError('未找到该用户信息')
       setLoading(false)
       return
     }
 
+    // If user hasn't filled in profile, use default context + precomputed card
+    if (!user) {
+      setIsDefaultUser(true)
+      const precomputed = (target as any).precomputedCard as EncounterCard | undefined
+      if (precomputed) {
+        setCard(precomputed)
+        addScannedPerson(id, target, precomputed)
+        setLoading(false)
+        return
+      }
+      // Use default + try API as fallback
+      saveUserContext(DEFAULT_USER)
+    }
+
+    const ctx = user || DEFAULT_USER
+    setIsDefaultUser(!user)
+
     setLoading(true)
     fetch('/api/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user, target }),
+      body: JSON.stringify({ user: ctx, target }),
     })
       .then((res) => res.json())
       .then((data: EncounterCard) => {
@@ -44,16 +64,15 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
         addScannedPerson(id, target, data)
       })
       .catch(() => {
-        // Try precomputed card as fallback
-        const person = getPersonById(id)
-        if ((person as any)?.precomputedCard) {
-          setCard((person as any).precomputedCard)
+        const precomputed = (target as any).precomputedCard
+        if (precomputed) {
+          setCard(precomputed)
         } else {
           setError('加载失败，请稍后重试')
         }
       })
       .finally(() => setLoading(false))
-  }, [id, router])
+  }, [id])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -74,6 +93,16 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
             我的诉求
           </Link>
         </div>
+
+        {/* Default User Banner */}
+        {isDefaultUser && card && (
+          <div className="mb-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
+            <Info className="w-4 h-4 text-blue-400 flex-shrink-0" />
+            <p className="text-xs text-blue-300">
+              正在使用默认诉求。点右上角「我的诉求」填写你自己的信息，获得精准匹配
+            </p>
+          </div>
+        )}
 
         {/* Loading Skeleton */}
         {loading && (
