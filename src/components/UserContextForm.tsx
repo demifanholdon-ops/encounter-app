@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { saveUserContext } from '@/lib/storage'
+import { getUserContext, saveUserContext } from '@/lib/storage'
+import type { UserContext } from '@/lib/schema'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -15,9 +16,21 @@ const FIELDS = [
   { key: 'activityContext', label: '当前活动场景', placeholder: '例：武汉 Rebase Web3 黑客松 2026', hint: '这场活动叫什么、在哪里、什么性质' },
 ]
 
+function getInitialForm(existing: UserContext | null): Record<string, string> {
+  if (!existing) return {}
+  return {
+    longTerm: existing.longTerm || '',
+    midTerm: existing.midTerm || '',
+    shortTerm: existing.shortTerm || '',
+    background: existing.background || '',
+    activityContext: existing.activityContext || '',
+  }
+}
+
 export function UserContextForm() {
   const router = useRouter()
-  const [form, setForm] = useState<Record<string, string>>({})
+  const existing = getUserContext()
+  const [form, setForm] = useState<Record<string, string>>(getInitialForm(existing))
   const [error, setError] = useState('')
 
   const handleChange = (key: string, value: string) => {

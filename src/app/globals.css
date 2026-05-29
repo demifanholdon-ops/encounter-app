@@ -56,3 +56,66 @@
   background: linear-gradient(135deg, #64748b, #475569);
   color: #fff;
 }
+
+/* MatchLoading: avatar glow breathing */
+.avatar-glow-blue {
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  animation: avatar-breathe 1.8s ease-in-out infinite;
+}
+.avatar-glow-purple {
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  animation: avatar-breathe 1.8s ease-in-out 0.5s infinite;
+}
+@keyframes avatar-breathe {
+  0%, 100% { box-shadow: 0 0 8px 2px color-mix(in oklch, currentColor 20%, transparent); transform: scale(1); }
+  50% { box-shadow: 0 0 20px 6px color-mix(in oklch, currentColor 40%, transparent); transform: scale(1.04); }
+}
+
+/* MatchLoading: connection beam */
+.connection-beam {
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+  background-size: 200% 100%;
+  animation: beam-flow 1.4s ease-in-out infinite, beam-pulse 1.4s ease-in-out infinite;
+}
+@keyframes beam-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes beam-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* MatchLoading: orbiting dot */
+.connection-dot {
+  animation: orbit-dot 1.2s ease-in-out infinite;
+}
+@keyframes orbit-dot {
+  0%, 100% { transform: translateX(-7px) scale(1); opacity: 0.4; }
+  50% { transform: translateX(7px) scale(1.5); opacity: 1; }
+}
+
+/* MatchLoading: floating particles */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+  25% { transform: translateY(-8px) translateX(3px) scale(1.4); opacity: 0.7; }
+  50% { transform: translateY(-3px) translateX(6px) scale(0.8); opacity: 0.5; }
+  75% { transform: translateY(-12px) translateX(-2px) scale(1.2); opacity: 0.6; }
+}
+.animate-float-particle {
+  animation: float-particle 3s ease-in-out infinite;
+}
+
+/* MatchLoading: sequential thinking steps */
+@keyframes step-reveal {
+  0%, 100% { opacity: 0; }
+  20%, 50% { opacity: 1; }
+}
+.thinking-step {
+  animation: step-reveal 2.4s ease-in-out infinite;
+}
