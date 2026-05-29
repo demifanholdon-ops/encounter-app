@@ -4,19 +4,12 @@ import { useEffect, useState, use } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ScoreCard } from '@/components/ScoreCard'
-import { getUserContext, saveUserContext, addScannedPerson } from '@/lib/storage'
+import { ProfileCard } from '@/components/ProfileCard'
+import { getUserContext, addScannedPerson } from '@/lib/storage'
 import { getPersonById } from '@/lib/people'
 import type { EncounterCard, UserContext } from '@/lib/schema'
 import { Skeleton } from '@/components/ui/skeleton'
 import { ArrowLeft, AlertCircle, Info, Sparkles, Eye } from 'lucide-react'
-
-const DEFAULT_USER: UserContext = {
-  longTerm: 'AI 硬件出海创业',
-  midTerm: '扩展认知和人脉',
-  shortTerm: '本场找 AI 硬件 / Web3 方向的人合作',
-  background: '全栈工程师，擅长 AI 和前端',
-  activityContext: '武汉 Rebase Web3 黑客松 2026',
-}
 
 export default function EncounterPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
@@ -36,26 +29,19 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
       return
     }
 
-    const isDefault = !user
-    setIsDefaultUser(isDefault)
-    const ctx = user || DEFAULT_USER
-
-    // No profile + has precomputed → instant show
-    if (isDefault) {
-      const precomputed = (target as any).precomputedCard as EncounterCard | undefined
-      if (precomputed) {
-        setCard(precomputed)
-        addScannedPerson(id, target, precomputed)
-        setLoading(false)
-        return
-      }
+    // just looking — show profile, no AI card
+    if (!user) {
+      setIsDefaultUser(true)
+      setLoading(false)
+      return
     }
 
+    setIsDefaultUser(false)
     setLoading(true)
     fetch('/api/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user: ctx, target }),
+      body: JSON.stringify({ user, target }),
     })
       .then((res) => res.json())
       .then((data: EncounterCard) => {
@@ -116,7 +102,7 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
               </button>
             </div>
             <p className="text-[11px] text-slate-600">
-              选「我只是看看」会用默认诉求为你生成卡片，后续可在右上角重新设置
+              选「我只是看看」先查看对方的基本资料，填写诉求后才有专属匹配
             </p>
           </div>
         )}
@@ -142,11 +128,11 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
             </div>
 
             {/* Default User Banner */}
-            {isDefaultUser && card && (
+            {isDefaultUser && (
               <div className="mb-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/20">
                 <Info className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <p className="text-xs text-blue-300">
-                  使用默认诉求查看。点右上角「我的诉求」填写你自己的目标，获得精准匹配
+                  这是 TA 的基本资料。点右上角「我的诉求」填写你的目标，AI 为你生成专属作战卡片
                 </p>
               </div>
             )}
@@ -193,7 +179,10 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
               </div>
             )}
 
-            {/* Card */}
+            {/* Profile Card (just looking) */}
+            {isDefaultUser && !loading && <ProfileCard person={getPersonById(id)!} />}
+
+            {/* Battle Card */}
             {card && !loading && <ScoreCard card={card} />}
           </>
         )}
