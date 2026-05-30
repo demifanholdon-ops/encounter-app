@@ -4,9 +4,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { getUserContext, saveUserContext } from '@/lib/storage'
 import type { UserContext } from '@/lib/schema'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 
 const FIELDS = [
   { key: 'longTerm', label: '长期目标', placeholder: '例：AI 硬件出海创业', hint: '你 3-5 年的职业或创业方向' },
@@ -56,38 +53,38 @@ export function UserContextForm() {
   }
 
   return (
-    <Card className="w-full max-w-lg mx-auto glass-surface border-0">
-      <CardHeader className="pb-4">
-        <CardTitle className="text-xl text-white">开始使用 Encounter</CardTitle>
-        <CardDescription className="text-slate-400">
-          告诉我你的三层面诉求，AI 帮你在现场找到最适合的人
-        </CardDescription>
-      </CardHeader>
+    <div className="w-full max-w-lg mx-auto section-card p-6">
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-[#1d1d1f]">Encounter</h1>
+        <p className="text-sm text-[#aeaeb2] mt-1">
+          告诉我你的诉求，AI 帮你在现场找到最适合的人
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit}>
-        <CardContent className="space-y-4">
+        <div className="space-y-5">
           {FIELDS.map((field) => (
-            <div key={field.key} className="space-y-1">
-              <label className="text-sm font-medium text-slate-300">{field.label}</label>
-              <Input
+            <div key={field.key} className="space-y-1.5">
+              <label className="text-sm font-medium text-[#1d1d1f]">{field.label}</label>
+              <input
                 value={form[field.key] || ''}
                 onChange={(e) => handleChange(field.key, e.target.value)}
                 placeholder={field.placeholder}
-                className="bg-slate-800/50 border-slate-700 text-slate-100 placeholder:text-slate-500 focus:border-blue-500 focus:ring-blue-500/20"
+                className="w-full px-4 py-3 rounded-xl bg-[#f5f3f0] border border-transparent text-[#1d1d1f] placeholder:text-[#d1d1d6] text-sm focus:outline-none focus:border-blue-400 focus:bg-white transition-colors"
               />
-              <p className="text-[11px] text-slate-500">{field.hint}</p>
+              <p className="text-[11px] text-[#aeaeb2]">{field.hint}</p>
             </div>
           ))}
-          {error && <p className="text-sm text-red-400">{error}</p>}
-        </CardContent>
-        <CardFooter>
-          <Button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold shadow-lg shadow-blue-500/20"
-          >
-            开始碰一碰
-          </Button>
-        </CardFooter>
+          {error && <p className="text-sm text-rose-500">{error}</p>}
+        </div>
+
+        <button
+          type="submit"
+          className="w-full mt-6 py-3.5 rounded-xl bg-[#1d1d1f] text-white font-semibold text-sm hover:bg-black transition-colors active:scale-[0.98]"
+        >
+          开始碰一碰
+        </button>
       </form>
-    </Card>
+    </div>
   )
 }
