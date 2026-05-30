@@ -87,7 +87,7 @@ export default function EncounterPage({ params }: { params: Promise<{ id: string
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-lg mx-auto px-5 pt-[max(env(safe-area-inset-top,24px),24px)] pb-8 relative z-10">
+      <div className="max-w-lg mx-auto px-5 pt-[max(env(safe-area-inset-top,24px),24px)] pb-8">
 
         {/* === WELCOME === */}
         {showWelcome && (

@@ -15,7 +15,7 @@ export default function Home() {
   if (existingCtx && !showForm) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6">
-        <div className="w-full max-w-md text-center space-y-6 relative z-10">
+        <div className="w-full max-w-md text-center space-y-6">
           <h1 className="text-3xl font-bold text-[#1C1C1E]">Encounter</h1>
 
           <div className="card-lg p-6 space-y-4">
@@ -57,7 +57,7 @@ export default function Home() {
   // Show form
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
-      <div className="w-full max-w-lg space-y-8 relative z-10">
+      <div className="w-full max-w-lg space-y-8">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold text-[#1C1C1E]">Encounter</h1>
           <p className="text-sm text-[#9A9A9A]">碰一下 NFC，AI 替你找到最适合的人</p>

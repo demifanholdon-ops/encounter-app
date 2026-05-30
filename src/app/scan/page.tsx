@@ -21,7 +21,7 @@ export default function ScanPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-lg mx-auto px-5 pt-8 pb-24 relative z-10">
+      <div className="max-w-lg mx-auto px-5 pt-8 pb-24">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold text-[#1C1C1E]">遇见的人</h1>

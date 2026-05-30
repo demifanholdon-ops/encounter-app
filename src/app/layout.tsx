@@ -14,17 +14,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className={`${geist.className} antialiased min-h-screen relative`}>
-        {/* Base gradient */}
-        <div className="bg-gradient-main" />
-
-        {/* Radial gradient orbs — huge blur, very low opacity */}
+      <body className={`${geist.className} antialiased min-h-screen`}>
+        {/* Background: z-index: -1 lets backdrop-filter on cards see through */}
+        <div className="bg-gradient-main" style={{ zIndex: -1 }} />
         <div
           className="bg-orb"
           style={{
+            zIndex: -1,
             width: 440,
             height: 440,
-            background: 'radial-gradient(circle, rgba(59,130,246,0.10), transparent 70%)',
+            background: 'radial-gradient(circle, rgba(59,130,246,0.18), transparent 65%)',
             top: -120,
             left: -80,
           }}
@@ -32,9 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div
           className="bg-orb"
           style={{
+            zIndex: -1,
             width: 380,
             height: 380,
-            background: 'radial-gradient(circle, rgba(139,92,246,0.09), transparent 70%)',
+            background: 'radial-gradient(circle, rgba(139,92,246,0.16), transparent 65%)',
             top: '45%',
             right: -100,
           }}
@@ -42,18 +42,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div
           className="bg-orb"
           style={{
+            zIndex: -1,
             width: 320,
             height: 320,
-            background: 'radial-gradient(circle, rgba(249,115,22,0.07), transparent 70%)',
+            background: 'radial-gradient(circle, rgba(249,115,22,0.12), transparent 65%)',
             bottom: -80,
             left: '25%',
           }}
         />
 
-        {/* Content layer */}
-        <div className="relative z-10">
-          {children}
-        </div>
+        {/* Content: no z-index wrapper, natural DOM flow sits above z-index: -1 backgrounds */}
+        {children}
       </body>
     </html>
   )
