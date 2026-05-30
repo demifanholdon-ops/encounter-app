@@ -14,14 +14,43 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className={`${geist.className} antialiased min-h-screen bg-[#f5f3f0] text-[#1d1d1f] relative`}>
-        {/* Background glowing orbs — the 'stuff' behind the glass */}
-        <div className="bg-orb w-[320px] h-[320px] bg-blue-200/50 top-[-80px] left-[-60px]" />
-        <div className="bg-orb w-[280px] h-[280px] bg-violet-200/40 top-[40%] right-[-100px]" />
-        <div className="bg-orb w-[240px] h-[240px] bg-rose-200/30 bottom-[-60px] left-[20%]" />
-        <div className="bg-orb w-[200px] h-[200px] bg-amber-200/30 top-[60%] left-[-40px]" />
+      <body className={`${geist.className} antialiased min-h-screen relative`}>
+        {/* Base gradient */}
+        <div className="bg-gradient-main" />
 
-        {/* Content — sits above the orbs, z-10 so glass cards float over */}
+        {/* Radial gradient orbs — huge blur, very low opacity */}
+        <div
+          className="bg-orb"
+          style={{
+            width: 440,
+            height: 440,
+            background: 'radial-gradient(circle, rgba(59,130,246,0.10), transparent 70%)',
+            top: -120,
+            left: -80,
+          }}
+        />
+        <div
+          className="bg-orb"
+          style={{
+            width: 380,
+            height: 380,
+            background: 'radial-gradient(circle, rgba(139,92,246,0.09), transparent 70%)',
+            top: '45%',
+            right: -100,
+          }}
+        />
+        <div
+          className="bg-orb"
+          style={{
+            width: 320,
+            height: 320,
+            background: 'radial-gradient(circle, rgba(249,115,22,0.07), transparent 70%)',
+            bottom: -80,
+            left: '25%',
+          }}
+        />
+
+        {/* Content layer */}
         <div className="relative z-10">
           {children}
         </div>

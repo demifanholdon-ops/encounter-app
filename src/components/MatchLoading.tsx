@@ -9,26 +9,26 @@ interface MatchLoadingProps {
 export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
   return (
     <div className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden">
-      {/* Floating particles */}
+      {/* Floating particles — from edges converging to center */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 16 }).map((_, i) => (
+        {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-violet-400 animate-float-particle"
             style={{
               left: `${10 + Math.random() * 80}%`,
               top: `${10 + Math.random() * 80}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2.5 + Math.random() * 2}s`,
-              opacity: 0.15 + Math.random() * 0.25,
+              animationDelay: `${Math.random() * 2.5}s`,
+              animationDuration: `${3 + Math.random() * 2}s`,
+              opacity: 0.10 + Math.random() * 0.20,
             }}
           />
         ))}
       </div>
 
-      {/* Avatars + Connection */}
+      {/* Avatars + Connection beam */}
       <div className="relative flex items-center gap-5 z-10">
-        {/* User avatar */}
+        {/* Me */}
         <div className="flex flex-col items-center gap-1.5">
           <div className="avatar-glow-blue">
             <img
@@ -40,12 +40,12 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
               }}
             />
           </div>
-          <span className="text-[11px] text-[#8e8e93] font-medium">你</span>
+          <span className="text-[11px] text-[#9A9A9A] font-medium">你</span>
         </div>
 
-        {/* Connection beam */}
+        {/* Beam */}
         <div className="relative flex items-center -mt-5">
-          <div className="w-12 h-0.5 rounded-full connection-beam" />
+          <div className="w-12 connection-beam" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-2 h-2 rounded-full bg-violet-400 connection-dot" />
           </div>
@@ -54,7 +54,7 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
           </div>
         </div>
 
-        {/* Target avatar */}
+        {/* Target */}
         <div className="flex flex-col items-center gap-1.5">
           <div className="avatar-glow-purple">
             <img
@@ -66,13 +66,13 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
               }}
             />
           </div>
-          <span className="text-[11px] text-[#8e8e93] font-medium">{targetName}</span>
+          <span className="text-[11px] text-[#9A9A9A] font-medium">{targetName}</span>
         </div>
       </div>
 
       {/* Thinking text */}
       <div className="mt-12 text-center z-10">
-        <p className="text-base font-semibold text-[#1d1d1f] flex items-center justify-center gap-1.5">
+        <p className="text-base font-semibold text-[#1C1C1E] flex items-center justify-center gap-1.5">
           AI 正在分析匹配度
           <span className="inline-flex gap-0.5 ml-0.5">
             <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -80,7 +80,7 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
             <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: '400ms' }} />
           </span>
         </p>
-        <p className="text-xs text-[#8e8e93] mt-2.5">
+        <p className="text-xs text-[#9A9A9A] mt-2.5">
           <span className="thinking-step opacity-0" style={{ animationDelay: '0s' }}>解析诉求</span>
           {' · '}
           <span className="thinking-step opacity-0" style={{ animationDelay: '0.8s' }}>扫描技能</span>

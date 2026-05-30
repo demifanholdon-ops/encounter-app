@@ -53,35 +53,32 @@ export function UserContextForm() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto glass-card p-6">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-[#1d1d1f]">Encounter</h1>
-        <p className="text-sm text-[#8e8e93] mt-1">
-          告诉我你的诉求，AI 帮你在现场找到最适合的人
+    <div className="w-full max-w-lg mx-auto card-lg p-6">
+      <div className="mb-7">
+        <h1 className="text-2xl font-bold text-[#1C1C1E]">Encounter</h1>
+        <p className="text-sm text-[#9A9A9A] mt-1">
+          填写你的三层诉求，AI 帮你在现场找到最适合的人
         </p>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="space-y-5">
+        <div className="space-y-6">
           {FIELDS.map((field) => (
-            <div key={field.key} className="space-y-1.5">
-              <label className="text-sm font-medium text-[#1d1d1f]">{field.label}</label>
+            <div key={field.key} className="space-y-2">
+              <label className="text-sm font-medium text-[#1C1C1E]">{field.label}</label>
               <input
                 value={form[field.key] || ''}
                 onChange={(e) => handleChange(field.key, e.target.value)}
                 placeholder={field.placeholder}
-                className="w-full px-4 py-3 rounded-[16px] glass-input text-[#1d1d1f] placeholder:text-[#c7c7cc] text-sm focus:outline-none focus:border-blue-400/50 focus:bg-white/80 transition-all"
+                className="w-full px-4 py-3.5 input-glass text-[#1C1C1E] placeholder:text-[#C7C7CC] text-sm focus:outline-none focus:border-blue-400/40 focus:bg-white/80 transition-all"
               />
-              <p className="text-[11px] text-[#8e8e93]">{field.hint}</p>
+              <p className="text-[11px] text-[#9A9A9A]">{field.hint}</p>
             </div>
           ))}
           {error && <p className="text-sm text-rose-500">{error}</p>}
         </div>
 
-        <button
-          type="submit"
-          className="w-full mt-6 py-3.5 rounded-[16px] bg-[#1d1d1f]/90 backdrop-blur-sm text-white font-semibold text-sm hover:bg-[#1d1d1f] transition-all active:scale-[0.98] shadow-lg shadow-black/10"
-        >
+        <button type="submit" className="w-full mt-7 py-3.5 btn-primary text-sm font-semibold">
           开始碰一碰
         </button>
       </form>
