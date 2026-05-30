@@ -53,10 +53,10 @@ export function UserContextForm() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto section-card p-6">
+    <div className="w-full max-w-lg mx-auto glass-card p-6">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-[#1d1d1f]">Encounter</h1>
-        <p className="text-sm text-[#aeaeb2] mt-1">
+        <p className="text-sm text-[#8e8e93] mt-1">
           告诉我你的诉求，AI 帮你在现场找到最适合的人
         </p>
       </div>
@@ -70,9 +70,9 @@ export function UserContextForm() {
                 value={form[field.key] || ''}
                 onChange={(e) => handleChange(field.key, e.target.value)}
                 placeholder={field.placeholder}
-                className="w-full px-4 py-3 rounded-xl bg-[#f5f3f0] border border-transparent text-[#1d1d1f] placeholder:text-[#d1d1d6] text-sm focus:outline-none focus:border-blue-400 focus:bg-white transition-colors"
+                className="w-full px-4 py-3 rounded-[16px] glass-input text-[#1d1d1f] placeholder:text-[#c7c7cc] text-sm focus:outline-none focus:border-blue-400/50 focus:bg-white/80 transition-all"
               />
-              <p className="text-[11px] text-[#aeaeb2]">{field.hint}</p>
+              <p className="text-[11px] text-[#8e8e93]">{field.hint}</p>
             </div>
           ))}
           {error && <p className="text-sm text-rose-500">{error}</p>}
@@ -80,7 +80,7 @@ export function UserContextForm() {
 
         <button
           type="submit"
-          className="w-full mt-6 py-3.5 rounded-xl bg-[#1d1d1f] text-white font-semibold text-sm hover:bg-black transition-colors active:scale-[0.98]"
+          className="w-full mt-6 py-3.5 rounded-[16px] bg-[#1d1d1f]/90 backdrop-blur-sm text-white font-semibold text-sm hover:bg-[#1d1d1f] transition-all active:scale-[0.98] shadow-lg shadow-black/10"
         >
           开始碰一碰
         </button>

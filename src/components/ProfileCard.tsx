@@ -5,18 +5,18 @@ import { MapPin, Target } from 'lucide-react'
 
 export function ProfileCard({ person }: { person: PersonData }) {
   return (
-    <div className="w-full max-w-md mx-auto card-surface overflow-hidden">
+    <div className="w-full max-w-md mx-auto glass-card overflow-hidden">
       {/* Header */}
       <div className="px-6 pt-6 pb-4">
         <div className="flex items-center gap-4">
           <img
             src={person.avatar || `https://api.dicebear.com/9.x/thumbs/png?seed=${person.id}&size=80&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`}
             alt={person.name}
-            className="w-16 h-16 rounded-full object-cover ring-2 ring-[#f0f0f0]"
+            className="w-16 h-16 rounded-full object-cover ring-2 ring-white/50"
           />
           <div>
             <h2 className="text-xl font-bold text-[#1d1d1f]">{person.name}</h2>
-            <div className="flex items-center gap-1 text-xs text-[#aeaeb2] mt-0.5">
+            <div className="flex items-center gap-1 text-xs text-[#8e8e93] mt-0.5">
               <MapPin className="w-3 h-3" />
               {person.location}
             </div>
@@ -34,7 +34,7 @@ export function ProfileCard({ person }: { person: PersonData }) {
         {person.skills.map((skill) => (
           <span
             key={skill}
-            className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-[#f5f3f0] text-[#6e6e73]"
+            className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-black/5 text-[#6e6e73]"
           >
             {skill}
           </span>
@@ -42,11 +42,11 @@ export function ProfileCard({ person }: { person: PersonData }) {
       </div>
 
       {/* Divider */}
-      <div className="mx-6 border-t border-[#f0f0f0]" />
+      <div className="mx-6 border-t border-black/5" />
 
       {/* Goals */}
       <div className="px-6 py-5 space-y-3">
-        <h3 className="text-xs font-semibold text-[#aeaeb2] uppercase tracking-wider flex items-center gap-1.5">
+        <h3 className="text-xs font-semibold text-[#8e8e93] uppercase tracking-wider flex items-center gap-1.5">
           <Target className="w-3.5 h-3.5" />
           三层目标
         </h3>
@@ -61,7 +61,7 @@ export function ProfileCard({ person }: { person: PersonData }) {
 function GoalRow({ label, goal }: { label: string; goal: string }) {
   return (
     <div className="flex items-start gap-2.5">
-      <span className="flex-shrink-0 w-10 text-[10px] font-semibold text-[#aeaeb2] uppercase mt-0.5">
+      <span className="flex-shrink-0 w-10 text-[10px] font-semibold text-[#8e8e93] uppercase mt-0.5">
         {label}
       </span>
       <p className="text-sm text-[#6e6e73]">{goal}</p>

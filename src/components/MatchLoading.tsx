@@ -9,18 +9,18 @@ interface MatchLoadingProps {
 export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
   return (
     <div className="relative flex flex-col items-center justify-center py-16 px-4 overflow-hidden">
-      {/* Floating particles background */}
+      {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 16 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-violet-300 animate-float-particle"
+            className="absolute w-1 h-1 rounded-full bg-violet-400 animate-float-particle"
             style={{
               left: `${10 + Math.random() * 80}%`,
               top: `${10 + Math.random() * 80}%`,
               animationDelay: `${Math.random() * 2}s`,
               animationDuration: `${2.5 + Math.random() * 2}s`,
-              opacity: 0.2 + Math.random() * 0.3,
+              opacity: 0.15 + Math.random() * 0.25,
             }}
           />
         ))}
@@ -40,10 +40,10 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
               }}
             />
           </div>
-          <span className="text-[11px] text-[#aeaeb2] font-medium">你</span>
+          <span className="text-[11px] text-[#8e8e93] font-medium">你</span>
         </div>
 
-        {/* Connection beam with particles */}
+        {/* Connection beam */}
         <div className="relative flex items-center -mt-5">
           <div className="w-12 h-0.5 rounded-full connection-beam" />
           <div className="absolute inset-0 flex items-center justify-center">
@@ -66,7 +66,7 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
               }}
             />
           </div>
-          <span className="text-[11px] text-[#aeaeb2] font-medium">{targetName}</span>
+          <span className="text-[11px] text-[#8e8e93] font-medium">{targetName}</span>
         </div>
       </div>
 
@@ -80,12 +80,12 @@ export function MatchLoading({ targetName, targetId }: MatchLoadingProps) {
             <span className="w-1 h-1 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: '400ms' }} />
           </span>
         </p>
-        <p className="text-xs text-[#aeaeb2] mt-2.5">
-          <span className="thinking-step" style={{ animationDelay: '0s' }}>解析诉求</span>
+        <p className="text-xs text-[#8e8e93] mt-2.5">
+          <span className="thinking-step opacity-0" style={{ animationDelay: '0s' }}>解析诉求</span>
           {' · '}
-          <span className="thinking-step" style={{ animationDelay: '0.8s' }}>扫描技能</span>
+          <span className="thinking-step opacity-0" style={{ animationDelay: '0.8s' }}>扫描技能</span>
           {' · '}
-          <span className="thinking-step" style={{ animationDelay: '1.6s' }}>生成匹配</span>
+          <span className="thinking-step opacity-0" style={{ animationDelay: '1.6s' }}>生成匹配</span>
         </p>
       </div>
     </div>
