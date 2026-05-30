@@ -122,9 +122,17 @@
   }
 }
 
-/* ===== Background gradient + orbs ===== */
+/* ===== Background gradient + orbs =====
+   V5: color is baked across the WHOLE viewport (including dead-center, behind
+   cards) via stacked radial-gradients, so backdrop-blur always has something
+   colored to reveal — not only in the corners where the orb divs sit. */
 .bg-gradient-main {
-  background: linear-gradient(180deg, #E8EDF5 0%, #F1EFEC 50%, #F6F0E9 100%);
+  background:
+    radial-gradient(60% 50% at 50% 38%, rgba(139, 92, 246, 0.18), transparent 70%),
+    radial-gradient(70% 55% at 20% 18%, rgba(59, 130, 246, 0.22), transparent 72%),
+    radial-gradient(65% 55% at 85% 75%, rgba(249, 115, 22, 0.18), transparent 72%),
+    radial-gradient(55% 45% at 80% 12%, rgba(236, 72, 153, 0.16), transparent 70%),
+    linear-gradient(180deg, #E8EDF5 0%, #F1EFEC 50%, #F6F0E9 100%);
   position: fixed;
   inset: 0;
   z-index: 0;
