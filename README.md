@@ -107,14 +107,6 @@ vercel --prod
 
 ---
 
-## 🏆 项目背景
-
-诞生于 **Rebase 2026 AI Hacker House(武汉)**
-
-正在参与 **浦软黑客松**
-
----
-
 ## 📄 License
 
 MIT
