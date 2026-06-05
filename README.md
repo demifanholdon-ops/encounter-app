@@ -14,7 +14,7 @@ Encounter 让你碰一下对方的 NFC,**30 秒**拿到一张 AI 作战卡片:
 
 📊 **PPT 公开版**:[点击查看](https://demifanholdon-ops.github.io/encounter-app/deck.html)
 
-🚀 **产品 Demo**:[点击体验](https://encounter-app.vercel.app) *(部署中，如无法访问请查看下方本地运行)*
+🚀 **产品 Demo**:[点击体验](https://encounter-app-lovat.vercel.app)
 
 ---
 
